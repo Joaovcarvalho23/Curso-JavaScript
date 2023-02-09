@@ -1,0 +1,10 @@
+.negrito{
+    font-weight: bold;
+    color: beige;
+    background-color: lightslategray;
+}
+
+#textoPrincipal{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+}
