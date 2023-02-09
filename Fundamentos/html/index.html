@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+</head>
+<body>
+    <header>
+        Exercícios HTML
+    </header>
+
+    <br>
+    <nav>
+        <a href = "exercicios/teste.html">00 - Teste</a> <br>
+        <a href = "exercicios/temp.html">01 - Temporario</a>
+    </nav>
+
+    <section id = "conteudo"></section>
+    <footer>
+        <br>
+        Curso de web moderno
+    </footer>
+
+    <script>
+        /*seleciona todas as tags q forem passadas como parâmetro! Nesse caso, a tag 'a'. Retorna uma lista de tags*/
+        document.querySelectorAll('a').forEach(link => {
+            console.log(link)
+            //associando uma função que será chamada quando o usuário clicar
+            link.onclick = function(e){
+                e.preventDefault() //previne que o comportamento padrão (navegação) ocorra! Dá pra ver que funcionou
+                //console.log('Teve AÇÃO!!')
+                /*Essa ação quero que faça uma chamada ajax, pegue o conteúdo da página e jogue o conteúdo p/ dentro da sessao relativa ao conteúdo*/
+
+                const conteudo = document.getElementById('conteudo')
+
+                //requisição ajax p colocar dentro do conteúdo:
+                fetch(link.href)
+                    .then(resp => resp.text()) //essa função serve p pegar o conteudo html da página que a requisição foi feita.
+                    //com esse valor textual, podemos jogar dentro do 'conteudo' Para isso, vamos fazer:
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+    
+</body>
+</html>
