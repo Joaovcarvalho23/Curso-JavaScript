@@ -1,10 +1,10 @@
 <h1>Projeto</h1>
 <ul class="tree">
     <li>
-        Backend
+        <span jv-folder>Backend</span>
         <ul>
             <li>
-                app
+                <span jv-folder>app</span>
                 <ul>
                     <li>Produto.js</li>
                     <li>Usuário.js</li>
@@ -12,7 +12,7 @@
                 </ul>
             </li>
             <li>
-                config
+                <span jv-folder>config</span>
                 <ul>
                     <li>Banco.js</li>
                     <li>Rotas.js</li>
@@ -23,10 +23,10 @@
     </li><br>
 
     <li>
-        Frontend
+        <span jv-folder>Frontend</span>
         <ul>
             <li>
-                public
+                <span jv-folder>public</span>
                 <ul>
                     <li>app.css</li>
                     <li>app.js</li>
@@ -37,3 +37,19 @@
     </li>
 </ul> 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    //seleciona todos os elementos que estão marcados com propriedade pernosalizada 'jv-folder'
+    //forEach - pegar cada um dos elementos, e quando clicarmos neles, vamos disparar uma função de fechar ou abrir os elementos abaixo
+    document.querySelectorAll('[jv-folder]').forEach(meuFolder =>{
+        meuFolder.onclick = function(e){ //associando uma função que recebe o evento do clique como parâmetro
+            console.log('Foi clicado!')//conferindo se está pegando o clique dos spans
+
+            const ul = meuFolder.nextElementSibling //pega o próximo elemento depois da pasta
+            console.log(ul) //conferindo se está pegando a ul
+
+            const displayAtual_ul = ul.style.display //o display pode ser none(nao visivel) ou block (visivel)
+            ul.style.display = displayAtual_ul === 'none' ? 'block' : 'none' //se nao for visivel, troca pra visivel. E se for visivel, torna invisivel
+        }
+    })
+
+</script>
