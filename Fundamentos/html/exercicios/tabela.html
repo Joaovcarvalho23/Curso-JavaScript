@@ -1,0 +1,65 @@
+<table>
+    <caption>Produtos</caption>
+    <thead>
+        <tr> <!--table row-->
+            <th>Produto</th> <!--table head | colunas-->
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Ipad</td><!--table data-->
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td><!--ocupar mais de uma coluna (ocupa 3 colunas em uma coluna só)-->
+            <!--<td colspan="3" rowspan="2">Total</td> ocupa 3 colunas e 2 linhas-->
+            <td>37637,00</td>
+        </tr>
+
+        <!--
+            <tr>
+                <td>teste</td>
+            </tr>
+        -->
+    </tfoot>
+</table>
+
+<style>
+    table{
+        border-collapse: collapse;
+    }
+
+    th, td{
+        padding: 10px;
+    }
+
+    thead tr{ /*Para tr que está em thead, na linha que representa o cabeçalho*/
+        border-bottom: solid 3px #444;
+    }
+
+    tbody tr:hover{ /*Quando o usuário é dentro do tbody, vamos aplicar na linha da tabela quando o click do mouse passar por cima*/
+        background-color: #dedede;
+    }
+
+    tfoot{
+        background-color: #444;
+        color: aliceblue;
+        font-weight: bold;
+    }
+</style>
